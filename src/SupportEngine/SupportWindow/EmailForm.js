@@ -40,14 +40,12 @@ const EmailForm = (props) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     setLoading(true);
-    console.log('email', email);
     getOrCreateUser((user) => {
       props.setUser(user);
       getOrCreateChat((chat) => props.setChat(chat));
     });
   };
 
-  console.log(process.env.REACT_APP_CE_PRIVATE_KEY, process.env.REACT_APP_PROJECT_ID);
 
   return (
     <div
